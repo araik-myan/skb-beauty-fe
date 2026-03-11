@@ -38,7 +38,7 @@ export default function About() {
               />
 
               {/* Dark overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/50 to-charcoal/75" />
+              <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/30 to-charcoal/50" />
 
               {/* Warm light effect */}
               <div
@@ -58,7 +58,7 @@ export default function About() {
 
               {/* Content inside visual */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-10 text-center backdrop-blur-[1px]">
-                <div className="w-20 h-20 rounded-full border border-gold-muted/30 flex items-center justify-center mb-6 animate-float backdrop-blur-sm bg-white/5">
+                <div className="w-20 h-20 rounded-full border border-gold-muted/30 flex items-center justify-center mb-6 backdrop-blur-sm bg-white/5">
                   <Gem size={28} className="text-gold-muted/90" strokeWidth={1.2} />
                 </div>
                 <p className="font-serif text-3xl text-white leading-snug mb-2" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.25)' }}>

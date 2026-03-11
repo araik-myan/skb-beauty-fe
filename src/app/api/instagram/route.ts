@@ -20,7 +20,7 @@ let cacheTimestamp = 0;
  */
 async function fetchWithGraphAPI(token: string): Promise<InstagramPost[]> {
   const response = await fetch(
-    `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&limit=9&access_token=${token}`,
+    `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&limit=30&access_token=${token}`,
     { next: { revalidate: CACHE_DURATION } }
   );
 
@@ -87,7 +87,7 @@ async function fetchPublicProfile(
         };
       })
       .filter(
-        (p: InstagramPost) => p.media_type === "IMAGE" && p.media_url
+        (p: InstagramPost) => p.media_url
       );
   } catch {
     return [];

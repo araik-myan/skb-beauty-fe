@@ -38,7 +38,7 @@ export default function Refreshment() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               {/* Background image */}
               <Image
-                src="/images/boissons.png"
+                src="/images/boissons1.jpg"
                 alt="Espace rafraîchissement SKB Beauty"
                 fill
                 className="object-cover"
@@ -46,7 +46,7 @@ export default function Refreshment() {
               />
 
               {/* Dark overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-b from-charcoal/55 via-charcoal/45 to-charcoal/65" />
+              <div className="absolute inset-0 bg-gradient-to-b from-charcoal/35 via-charcoal/25 to-charcoal/45" />
 
               {/* Warm glow */}
               <div
@@ -60,20 +60,15 @@ export default function Refreshment() {
               <div className="absolute inset-0 flex flex-col items-center justify-center p-10 text-center">
                 {/* Decorative rings */}
                 <div className="relative mb-8">
-                  <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={isInView ? { scale: 1, opacity: 1 } : {}}
-                    transition={{ duration: 1, delay: 0.3, ease }}
-                    className="w-28 h-28 rounded-full border border-gold-muted/20 flex items-center justify-center"
-                  >
-                    <div className="w-20 h-20 rounded-full border border-gold-muted/15 flex items-center justify-center animate-float">
+                  <div className="w-28 h-28 rounded-full border border-gold-muted/20 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full border border-gold-muted/15 flex items-center justify-center">
                       <Coffee
                         size={28}
                         className="text-gold-muted/80"
                         strokeWidth={1.2}
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
 
                 <p className="font-serif text-2xl lg:text-3xl text-cream-light/90 leading-snug mb-2" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.25)' }}>
