@@ -2,17 +2,18 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 export default function Divider() {
+  const { lang } = useLanguage();
+  const t = translations.divider;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <div ref={ref} className="relative py-20 lg:py-24 overflow-hidden bg-cream-light">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-cream-light via-sand-light/30 to-cream-light" />
-
-      {/* Decorative lines */}
       <div className="absolute top-0 left-0 right-0 divider-line" />
       <div className="absolute bottom-0 left-0 right-0 divider-line" />
 
@@ -30,11 +31,9 @@ export default function Divider() {
             style={{ transformOrigin: "right" }}
             className="h-px flex-1 max-w-32 bg-gradient-to-r from-transparent to-camel/30"
           />
-
           <span className="font-serif text-lg lg:text-xl text-camel-dark/80 italic tracking-wide">
-            Votre beauté, notre passion
+            {t.text[lang]}
           </span>
-
           <motion.div
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}

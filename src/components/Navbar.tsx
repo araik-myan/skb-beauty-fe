@@ -3,16 +3,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Instagram } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations } from "@/i18n/translations";
 
-const navLinks = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "À Propos", href: "#apropos" },
-  { label: "Nos Soins", href: "#soins" },
-  { label: "Galerie", href: "#galerie" },
-  { label: "Contact", href: "#contact" },
-];
+const navKeys = ["home", "about", "services", "gallery", "contact"] as const;
+const navHrefs = ["#accueil", "#apropos", "#soins", "#galerie", "#contact"];
 
 export default function Navbar() {
+  const { lang, toggleLang } = useLanguage();
+  const t = translations.nav;
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -30,6 +29,11 @@ export default function Navbar() {
     }
     return () => { document.body.style.overflow = ""; };
   }, [isMobileOpen]);
+
+  const navLinks = navKeys.map((key, i) => ({
+    label: t[key][lang],
+    href: navHrefs[i],
+  }));
 
   return (
     <>
@@ -81,6 +85,15 @@ export default function Navbar() {
 
             {/* Desktop actions */}
             <div className="hidden lg:flex items-center gap-5">
+              {/* Language toggle */}
+              <button
+                onClick={toggleLang}
+                className={`text-[11px] uppercase tracking-[0.15em] font-medium transition-colors duration-300 hover:text-camel ${
+                  isScrolled ? "text-charcoal/60" : "text-white/60"
+                }`}
+              >
+                {lang === "fr" ? "EN" : "FR"}
+              </button>
               <a
                 href="https://www.instagram.com/skbbeauty212/"
                 target="_blank"
@@ -92,7 +105,9 @@ export default function Navbar() {
                 <Instagram size={18} strokeWidth={1.5} />
               </a>
               <a
-                href="/reservation"
+                href="https://www.planity.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] uppercase tracking-[0.2em] font-medium transition-all duration-500 hover:-translate-y-px ${
                   isScrolled
                     ? "bg-charcoal text-cream-light hover:bg-brown-dark hover:shadow-lg"
@@ -100,7 +115,7 @@ export default function Navbar() {
                 }`}
               >
                 <Phone size={12} />
-                Réserver
+                {t.book[lang]}
               </a>
             </div>
 
@@ -110,7 +125,7 @@ export default function Navbar() {
               className={`lg:hidden transition-colors ${
                 isScrolled ? "text-charcoal" : "text-white"
               }`}
-              aria-label="Ouvrir le menu"
+              aria-label={t.openMenu[lang]}
             >
               <Menu size={26} strokeWidth={1.5} />
             </button>
@@ -142,7 +157,7 @@ export default function Navbar() {
               <button
                 onClick={() => setIsMobileOpen(false)}
                 className="absolute top-6 right-6 text-charcoal/60 hover:text-charcoal transition-colors"
-                aria-label="Fermer le menu"
+                aria-label={t.closeMenu[lang]}
               >
                 <X size={26} strokeWidth={1.5} />
               </button>
@@ -155,6 +170,14 @@ export default function Navbar() {
                   Marrakech
                 </span>
               </div>
+
+              {/* Language toggle mobile */}
+              <button
+                onClick={toggleLang}
+                className="mb-8 text-[12px] uppercase tracking-[0.2em] text-camel font-medium border border-camel/30 px-5 py-2 rounded-full hover:bg-camel/5 transition-colors"
+              >
+                {lang === "fr" ? "English" : "Français"}
+              </button>
 
               <div className="flex flex-col items-center gap-7">
                 {navLinks.map((link, i) => (
@@ -182,10 +205,13 @@ export default function Navbar() {
                 className="mt-14 flex flex-col items-center gap-5"
               >
                 <a
-                  href="/reservation"
+                  href="https://www.planity.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 px-10 py-3.5 bg-charcoal text-cream-light rounded-full text-[12px] uppercase tracking-[0.2em] font-medium"
                 >
-                  Réserver
+                  <Phone size={14} strokeWidth={1.5} />
+                  {t.book[lang]}
                 </a>
                 <div className="flex items-center gap-6 mt-2">
                   <a
@@ -193,7 +219,7 @@ export default function Navbar() {
                     className="flex items-center gap-2 text-taupe hover:text-camel transition-colors"
                   >
                     <Phone size={14} strokeWidth={1.5} />
-                    <span className="text-xs tracking-wider">Appeler</span>
+                    <span className="text-xs tracking-wider">{t.call[lang]}</span>
                   </a>
                   <a
                     href="https://www.instagram.com/skbbeauty212/"

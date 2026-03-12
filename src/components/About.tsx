@@ -4,12 +4,22 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Heart, Gem, Award } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 export default function About() {
+  const { lang } = useLanguage();
+  const t = translations.about;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  const badges = [
+    { icon: Heart, label: t.passion[lang], desc: t.passionDesc[lang] },
+    { icon: Gem, label: t.quality[lang], desc: t.qualityDesc[lang] },
+    { icon: Award, label: t.expertise[lang], desc: t.expertiseDesc[lang] },
+  ];
 
   return (
     <section id="apropos" className="py-28 lg:py-36 bg-white relative overflow-hidden">
@@ -27,7 +37,6 @@ export default function About() {
             className="lg:col-span-5 relative"
           >
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden">
-              {/* Background image */}
               <Image
                 src="/images/about-bg.webp"
                 alt="SKB Beauty Marrakech - Institut de beauté"
@@ -36,36 +45,28 @@ export default function About() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
               />
-
-              {/* Dark overlay for text readability */}
               <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/30 to-charcoal/50" />
-
-              {/* Warm light effect */}
               <div
                 className="absolute inset-0"
                 style={{
                   background: `radial-gradient(ellipse 300px 400px at 60% 40%, rgba(201,169,110,0.15) 0%, transparent 70%)`,
                 }}
               />
-
-              {/* Concentrated dark zone behind text */}
               <div
                 className="absolute inset-0"
                 style={{
                   background: `radial-gradient(ellipse 70% 50% at 50% 55%, rgba(61,50,41,0.45) 0%, transparent 70%)`,
                 }}
               />
-
-              {/* Content inside visual */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-10 text-center backdrop-blur-[1px]">
                 <div className="w-20 h-20 rounded-full border border-gold-muted/30 flex items-center justify-center mb-6 backdrop-blur-sm bg-white/5">
                   <Gem size={28} className="text-gold-muted/90" strokeWidth={1.2} />
                 </div>
                 <p className="font-serif text-3xl text-white leading-snug mb-2" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.25)' }}>
-                  L&apos;art de
+                  {t.overlayTitle1[lang]}
                 </p>
                 <p className="font-serif text-3xl text-gold-muted italic leading-snug" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.2)' }}>
-                  la beauté
+                  {t.overlayTitle2[lang]}
                 </p>
                 <div className="w-12 h-px shimmer-gold mt-6" />
               </div>
@@ -83,15 +84,14 @@ export default function About() {
                   <Award size={20} className="text-gold-muted" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="font-serif text-lg text-charcoal">Excellence</p>
+                  <p className="font-serif text-lg text-charcoal">{t.cardTitle[lang]}</p>
                   <p className="text-[10px] text-taupe uppercase tracking-[0.2em]">
-                    Beauté & Bien-être
+                    {t.cardSubtitle[lang]}
                   </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Corner accents */}
             <div className="absolute -top-3 -left-3 w-16 h-16 border-t border-l border-camel/15 rounded-tl-2xl" />
             <div className="absolute -bottom-3 -right-3 w-20 h-20 border-b border-r border-camel/10 rounded-br-2xl" />
           </motion.div>
@@ -106,48 +106,48 @@ export default function About() {
             <div className="flex items-center gap-4 mb-8">
               <div className="h-px w-12 bg-camel" />
               <span className="text-camel text-[11px] uppercase tracking-[0.4em]">
-                À Propos
+                {t.label[lang]}
               </span>
             </div>
 
             <h2 className="font-serif text-4xl lg:text-5xl xl:text-6xl text-charcoal leading-[1.1] mb-8">
-              Un havre de beauté
+              {t.heading1[lang]}
               <span className="block text-camel-dark italic font-light mt-1">
-                au cœur de Guéliz
+                {t.heading2[lang]}
               </span>
             </h2>
 
             <div className="space-y-5 text-taupe leading-[1.8] text-[15px]">
               <p>
-                Bienvenue chez{" "}
-                <strong className="text-charcoal font-medium">
-                  SKB Beauty Marrakech
-                </strong>
-                , votre destination beauté d&apos;exception au cœur du quartier Guéliz.
-                Notre institut incarne l&apos;élégance et le raffinement, offrant un
-                espace où chaque détail est pensé pour sublimer votre beauté naturelle.
+                {lang === "fr" ? (
+                  <>
+                    Bienvenue chez{" "}
+                    <strong className="text-charcoal font-medium">SKB Beauty Marrakech</strong>
+                    , votre destination beauté d&apos;exception au cœur du quartier Guéliz.
+                    Notre institut incarne l&apos;élégance et le raffinement, offrant un
+                    espace où chaque détail est pensé pour sublimer votre beauté naturelle.
+                  </>
+                ) : (
+                  <>
+                    Welcome to{" "}
+                    <strong className="text-charcoal font-medium">SKB Beauty Marrakech</strong>
+                    , your exceptional beauty destination in the heart of the Guéliz district.
+                    Our institute embodies elegance and refinement, offering a space where every
+                    detail is designed to enhance your natural beauty.
+                  </>
+                )}
               </p>
-              <p>
-                Dans un cadre chaleureux et luxueux, notre équipe de professionnelles
-                passionnées vous accueille avec une attention particulière. Chaque soin
-                est une expérience sur-mesure, conçue pour répondre à vos besoins
-                uniques et révéler votre éclat intérieur.
-              </p>
+              <p>{t.p2[lang]}</p>
               <p className="text-charcoal/70 italic font-serif text-lg">
-                Nous croyons que la beauté est un art — et que chaque femme mérite
-                un moment de grâce et de sérénité pour se reconnecter à elle-même.
+                {t.p3[lang]}
               </p>
             </div>
 
             {/* Feature badges */}
             <div className="flex flex-wrap gap-8 mt-12 pt-10 border-t border-sand-light/50">
-              {[
-                { icon: Heart, label: "Passion", desc: "Du soin" },
-                { icon: Gem, label: "Qualité", desc: "Premium" },
-                { icon: Award, label: "Expertise", desc: "Confirmée" },
-              ].map((item, i) => (
+              {badges.map((item, i) => (
                 <motion.div
-                  key={item.label}
+                  key={i}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.5 + i * 0.1, ease }}

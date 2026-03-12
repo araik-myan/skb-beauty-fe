@@ -13,94 +13,25 @@ import {
   Paintbrush,
   ArrowRight,
 } from "lucide-react";
-import Link from "next/link";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations } from "@/i18n/translations";
 
-const services = [
-  {
-    icon: Eye,
-    title: "Sourcils",
-    subtitle: "Le regard sublimé",
-    description:
-      "Épilation, teinture, brow lift — des techniques précises pour des sourcils parfaitement dessinés.",
-    gradient: "from-[#3D3229] via-[#5A4D42] to-[#4A3728]",
-    accent: "#C9A96E",
-    size: "large",
-  },
-  {
-    icon: Sparkles,
-    title: "Cils",
-    subtitle: "L'éclat du regard",
-    description:
-      "Poses naturelles 2D, volume 3D/4D ou maxi volume 5D/6D pour un regard intense et captivant.",
-    gradient: "from-[#4A3728] via-[#5A4D42] to-[#3D3229]",
-    accent: "#D4BC9A",
-    size: "large",
-  },
-  {
-    icon: Scissors,
-    title: "Épilation",
-    subtitle: "Douceur absolue",
-    description:
-      "Cire orientale pour une peau parfaitement lisse. Aisselles, jambes, maillots ou forfait intégral.",
-    gradient: "from-[#5A4D42] via-[#4A3728] to-[#3D3229]",
-    accent: "#C47D5A",
-    size: "medium",
-  },
-  {
-    icon: Waves,
-    title: "Head Spa",
-    subtitle: "Rituel exclusif",
-    description:
-      "Massage crânien relaxant, soins du cuir chevelu et huiles aromatiques pour une détente absolue.",
-    gradient: "from-[#3D3229] via-[#4A3728] to-[#5A4D42]",
-    accent: "#DBC48A",
-    size: "medium",
-  },
-  {
-    icon: Heart,
-    title: "Massage",
-    subtitle: "Voyage sensoriel",
-    description:
-      "Relaxants, toniques ou aux pierres chaudes. Libérez les tensions et retrouvez la sérénité.",
-    gradient: "from-[#4A3728] via-[#3D3229] to-[#5A4D42]",
-    accent: "#D4977A",
-    size: "medium",
-  },
-  {
-    icon: Hand,
-    title: "Manucure",
-    subtitle: "Mains sublimes",
-    description:
-      "Pose gel, semi-permanent, gainage ou nails art. Des ongles impeccables grâce à notre expertise.",
-    gradient: "from-[#5A4D42] via-[#3D3229] to-[#4A3728]",
-    accent: "#C4A77D",
-    size: "small",
-  },
-  {
-    icon: Footprints,
-    title: "Pédicure",
-    subtitle: "Soins des pieds",
-    description:
-      "Beauté, nettoyage, restructuration et vernis semi-permanent pour des pieds soignés et élégants.",
-    gradient: "from-[#3D3229] via-[#5A4D42] to-[#4A3728]",
-    accent: "#A69882",
-    size: "small",
-  },
-  {
-    icon: Paintbrush,
-    title: "Coiffure",
-    subtitle: "L'art capillaire",
-    description:
-      "Coupes, brushings, colorations, balayages, soins botox et lissages au service de votre beauté.",
-    gradient: "from-[#4A3728] via-[#5A4D42] to-[#3D3229]",
-    accent: "#D4BC9A",
-    size: "small",
-  },
+const servicesMeta = [
+  { icon: Eye, gradient: "from-[#3D3229] via-[#5A4D42] to-[#4A3728]", accent: "#C9A96E", size: "large" },
+  { icon: Sparkles, gradient: "from-[#4A3728] via-[#5A4D42] to-[#3D3229]", accent: "#D4BC9A", size: "large" },
+  { icon: Scissors, gradient: "from-[#5A4D42] via-[#4A3728] to-[#3D3229]", accent: "#C47D5A", size: "medium" },
+  { icon: Waves, gradient: "from-[#3D3229] via-[#4A3728] to-[#5A4D42]", accent: "#DBC48A", size: "medium" },
+  { icon: Heart, gradient: "from-[#4A3728] via-[#3D3229] to-[#5A4D42]", accent: "#D4977A", size: "medium" },
+  { icon: Hand, gradient: "from-[#5A4D42] via-[#3D3229] to-[#4A3728]", accent: "#C4A77D", size: "small" },
+  { icon: Footprints, gradient: "from-[#3D3229] via-[#5A4D42] to-[#4A3728]", accent: "#A69882", size: "small" },
+  { icon: Paintbrush, gradient: "from-[#4A3728] via-[#5A4D42] to-[#3D3229]", accent: "#D4BC9A", size: "small" },
 ];
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 export default function Services() {
+  const { lang } = useLanguage();
+  const t = translations.services;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -122,24 +53,24 @@ export default function Services() {
           <div className="flex items-center gap-4 mb-8">
             <div className="h-px w-12 bg-camel" />
             <span className="text-camel text-[11px] uppercase tracking-[0.4em]">
-              Nos Soins
+              {t.label[lang]}
             </span>
           </div>
           <h2 className="font-serif text-5xl lg:text-6xl xl:text-7xl text-charcoal leading-[1.05] mb-6">
-            Des soins d&apos;exception
+            {t.heading1[lang]}
             <span className="block text-camel-dark italic font-light mt-1">
-              pour révéler votre éclat
+              {t.heading2[lang]}
             </span>
           </h2>
           <p className="text-taupe leading-relaxed text-base lg:text-lg max-w-xl">
-            Découvrez notre gamme complète de soins beauté et bien-être,
-            conçus avec passion et expertise pour sublimer chaque femme.
+            {t.description[lang]}
           </p>
         </motion.div>
 
         {/* Editorial bento grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-5">
-          {services.map((service, index) => {
+          {servicesMeta.map((service, index) => {
+            const item = t.items[index];
             const colSpan =
               service.size === "large"
                 ? "lg:col-span-6"
@@ -149,7 +80,7 @@ export default function Services() {
 
             return (
               <motion.div
-                key={service.title}
+                key={index}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{
@@ -159,7 +90,11 @@ export default function Services() {
                 }}
                 className={`group relative ${colSpan}`}
               >
-                <Link href={`/reservation?category=${encodeURIComponent(service.title)}`}>
+                <a
+                  href="https://www.planity.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div
                     className={`relative rounded-2xl lg:rounded-3xl overflow-hidden transition-all duration-700 ease-out cursor-pointer
                       ${service.size === "large" ? "h-72 lg:h-80" : service.size === "medium" ? "h-64 lg:h-72" : "h-56 lg:h-64"}`}
@@ -211,10 +146,10 @@ export default function Services() {
                           className="text-[10px] uppercase tracking-[0.3em] mb-2 transition-colors duration-500"
                           style={{ color: `${service.accent}99` }}
                         >
-                          {service.subtitle}
+                          {item.subtitle[lang]}
                         </p>
                         <h3 className="font-serif text-2xl lg:text-3xl text-white mb-3 leading-tight">
-                          {service.title}
+                          {item.title[lang]}
                         </h3>
 
                         {/* Description - revealed on hover */}
@@ -222,7 +157,7 @@ export default function Services() {
                           <motion.p
                             className="text-white/50 text-sm leading-relaxed transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
                           >
-                            {service.description}
+                            {item.description[lang]}
                           </motion.p>
                         </div>
 
@@ -232,7 +167,7 @@ export default function Services() {
                             className="text-[11px] uppercase tracking-[0.2em]"
                             style={{ color: service.accent }}
                           >
-                            Découvrir
+                            {t.discover[lang]}
                           </span>
                           <ArrowRight size={14} style={{ color: service.accent }} />
                         </div>
@@ -248,7 +183,7 @@ export default function Services() {
                       style={{ backgroundColor: service.accent }}
                     />
                   </div>
-                </Link>
+                </a>
               </motion.div>
             );
           })}
@@ -262,10 +197,12 @@ export default function Services() {
           className="mt-16 lg:mt-20 flex flex-col sm:flex-row items-center gap-6"
         >
           <a
-            href="/reservation"
+            href="https://www.planity.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-10 py-4 bg-charcoal text-cream-light rounded-full text-[13px] uppercase tracking-[0.2em] hover:bg-brown-dark transition-all duration-500 hover:shadow-xl hover:-translate-y-0.5"
           >
-            Prendre Rendez-vous
+            {t.bookCta[lang]}
             <ArrowRight
               size={14}
               className="group-hover:translate-x-1 transition-transform duration-300"
@@ -273,7 +210,7 @@ export default function Services() {
           </a>
           <div className="h-px w-12 bg-sand hidden sm:block" />
           <p className="text-taupe text-sm italic">
-            Consultez nos tarifs lors de la réservation
+            {t.bookNote[lang]}
           </p>
         </motion.div>
       </div>

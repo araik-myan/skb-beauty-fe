@@ -1,0 +1,16 @@
+{
+  "name": "SKB Beauty Marrakech",
+  "short_name": "SKB Beauty",
+  "description": "Institut de beauté premium au cœur de Guéliz, Marrakech",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F4",
+  "theme_color": "#3D3229",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

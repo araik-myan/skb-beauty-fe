@@ -1,15 +1,24 @@
 "use client";
 
 import { Instagram, Phone, Mail, MapPin, Heart } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations } from "@/i18n/translations";
+
+const navKeys = ["home", "about", "services", "gallery", "contact"] as const;
+const navHrefs = ["#accueil", "#apropos", "#soins", "#galerie", "#contact"];
 
 export default function Footer() {
+  const { lang } = useLanguage();
+  const t = translations.footer;
+  const nav = translations.nav;
+
   return (
     <footer className="bg-brown-dark relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-camel/15 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid md:grid-cols-12 gap-12 lg:gap-16">
-          {/* Brand — 5 cols */}
+          {/* Brand */}
           <div className="md:col-span-5">
             <div className="mb-6">
               <span className="font-serif text-2xl font-bold text-cream-light tracking-wider">
@@ -20,9 +29,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sand/50 text-sm leading-[1.8] max-w-sm mb-8">
-              Votre destination beauté d&apos;exception au cœur de Guéliz.
-              Un espace où l&apos;élégance rencontre le savoir-faire pour
-              sublimer votre beauté naturelle.
+              {t.description[lang]}
             </p>
             <a
               href="https://www.instagram.com/skbbeauty212/"
@@ -35,34 +42,28 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Quick links — 3 cols */}
+          {/* Quick links */}
           <div className="md:col-span-3">
             <h4 className="text-[11px] uppercase tracking-[0.3em] text-sand/40 font-medium mb-6">
-              Navigation
+              {t.navigation[lang]}
             </h4>
             <nav className="space-y-3.5">
-              {[
-                { label: "Accueil", href: "#accueil" },
-                { label: "À Propos", href: "#apropos" },
-                { label: "Nos Soins", href: "#soins" },
-                { label: "Galerie", href: "#galerie" },
-                { label: "Contact", href: "#contact" },
-              ].map((link) => (
+              {navKeys.map((key, i) => (
                 <a
-                  key={link.href}
-                  href={link.href}
+                  key={navHrefs[i]}
+                  href={navHrefs[i]}
                   className="block text-sand/40 hover:text-gold-muted transition-colors duration-300 text-sm tracking-wider"
                 >
-                  {link.label}
+                  {nav[key][lang]}
                 </a>
               ))}
             </nav>
           </div>
 
-          {/* Contact — 4 cols */}
+          {/* Contact */}
           <div className="md:col-span-4">
             <h4 className="text-[11px] uppercase tracking-[0.3em] text-sand/40 font-medium mb-6">
-              Contact
+              {t.contact[lang]}
             </h4>
             <div className="space-y-4">
               <a
@@ -99,12 +100,12 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-white/[0.04]">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sand/25 text-xs tracking-wider">
-              &copy; {new Date().getFullYear()} SKB Beauty Marrakech. Tous droits réservés.
+              &copy; {new Date().getFullYear()} {t.copyright[lang]}
             </p>
             <p className="flex items-center gap-1.5 text-sand/25 text-xs tracking-wider">
-              Fait avec{" "}
+              {t.madeWith[lang]}{" "}
               <Heart size={10} className="text-rose-gold/40" />
-              {" "}à Marrakech
+              {" "}{t.inMarrakech[lang]}
             </p>
           </div>
         </div>
