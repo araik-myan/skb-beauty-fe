@@ -78,12 +78,12 @@ export default function Hero() {
         </motion.div>
 
         {/* Main heading */}
-        <div className="overflow-hidden mb-4">
+        <div className="mb-4" style={{ clipPath: "inset(-10% -10% -15% -10%)" }}>
           <motion.h1
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-6xl md:text-8xl lg:text-9xl text-white font-bold leading-[0.95] tracking-tight"
+            className="font-serif text-6xl md:text-8xl lg:text-9xl text-white font-bold leading-[1.05] tracking-tight"
           >
             SKB Beauty
           </motion.h1>

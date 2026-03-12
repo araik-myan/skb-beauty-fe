@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx next:*)",
       "Bash(find /Users/araik/Workspace/Projects/skb-beauty-marrakech -type f \\\\\\( -name \"*.mp4\" -o -name \"*.webm\" -o -name \"*.avi\" -o -name \"*.mov\" \\\\\\) 2>/dev/null | head -20)",
-      "Bash(cwebp -q 80 /Users/araik/Workspace/Projects/skb-beauty-marrakech/public/images/about-bg.png -o /Users/araik/Workspace/Projects/skb-beauty-marrakech/public/images/about-bg.webp 2>&1 && ls -lh /Users/araik/Workspace/Projects/skb-beauty-marrakech/public/images/about-bg.webp /Users/araik/Workspace/Projects/skb-beauty-marrakech/public/images/about-bg.png)"
+      "Bash(cwebp -q 80 /Users/araik/Workspace/Projects/skb-beauty-marrakech/public/images/about-bg.png -o /Users/araik/Workspace/Projects/skb-beauty-marrakech/public/images/about-bg.webp 2>&1 && ls -lh /Users/araik/Workspace/Projects/skb-beauty-marrakech/public/images/about-bg.webp /Users/araik/Workspace/Projects/skb-beauty-marrakech/public/images/about-bg.png)",
+      "Bash(cd /Users/araik/Workspace/Projects/skb-beauty-marrakech && npm install lenis 2>&1 | tail -5)"
     ]
   }
 }

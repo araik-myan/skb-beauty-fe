@@ -33,10 +33,6 @@
   --font-sans: var(--font-inter);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--color-cream-light);
   color: var(--color-charcoal);
@@ -110,4 +106,9 @@ body {
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }

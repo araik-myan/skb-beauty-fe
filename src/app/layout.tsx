@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import PageTransition from "@/components/PageTransition";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -47,10 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="scroll-smooth">
+    <html lang="fr">
       <body
         className={`${playfair.variable} ${inter.variable} antialiased`}
       >
+        <SmoothScroll />
         <PageTransition>{children}</PageTransition>
       </body>
     </html>
