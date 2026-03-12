@@ -3,19 +3,20 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const images = [
-  "/images/instagram/IMG1.JPG",
-  "/images/instagram/IMG2.JPG",
-  "/images/instagram/IMG3.JPG",
-  "/images/instagram/IMG4.jpg",
-  "/images/instagram/IMG5.JPG",
-  "/images/instagram/IMG6.JPG",
-  "/images/instagram/IMG7.JPG",
-  "/images/instagram/IMG8.JPG",
-  "/images/instagram/IMG9.jpg",
+  "/images/instagram/IMG1.webp",
+  "/images/instagram/IMG2.webp",
+  "/images/instagram/IMG3.webp",
+  "/images/instagram/IMG4.webp",
+  "/images/instagram/IMG5.webp",
+  "/images/instagram/IMG6.webp",
+  "/images/instagram/IMG7.webp",
+  "/images/instagram/IMG8.webp",
+  "/images/instagram/IMG9.webp",
 ];
 
 const overlayGradients = [
@@ -89,10 +90,12 @@ export default function Gallery() {
               transition={{ duration: 0.9, delay: 0.12 * index, ease }}
               className={`group relative overflow-hidden rounded-xl cursor-pointer block break-inside-avoid ${heights[index]}`}
             >
-              <img
+              <Image
                 src={src}
                 alt="SKB Beauty Marrakech"
-                className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[0.1] sepia-[0.3] brightness-[1] ${index === 6 ? "object-bottom" : ""}`}
+                fill
+                sizes="(max-width: 768px) 50vw, 33vw"
+                className={`object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[0.1] sepia-[0.3] brightness-[1] ${index === 6 ? "object-bottom" : ""}`}
                 loading="lazy"
               />
 

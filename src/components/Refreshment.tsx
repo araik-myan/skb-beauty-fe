@@ -38,7 +38,7 @@ export default function Refreshment() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               {/* Background image */}
               <Image
-                src="/images/boissons1.jpg"
+                src="/images/boissons1.webp"
                 alt="Espace rafraîchissement SKB Beauty"
                 fill
                 className="object-cover"

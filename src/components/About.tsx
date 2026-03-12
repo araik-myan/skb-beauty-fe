@@ -29,7 +29,7 @@ export default function About() {
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden">
               {/* Background image */}
               <Image
-                src="/images/about-bg.png"
+                src="/images/about-bg.webp"
                 alt="SKB Beauty Marrakech - Institut de beauté"
                 fill
                 className="object-cover"
