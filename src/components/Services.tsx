@@ -91,7 +91,7 @@ export default function Services() {
                 className={`group relative ${colSpan}`}
               >
                 <a
-                  href="https://www.planity.com"
+                  href="https://booking.beautynow.ma/69b83820e4d068d34960102e"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -197,7 +197,7 @@ export default function Services() {
           className="mt-16 lg:mt-20 flex flex-col sm:flex-row items-center gap-6"
         >
           <a
-            href="https://www.planity.com"
+            href="https://booking.beautynow.ma/69b83820e4d068d34960102e"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-10 py-4 bg-charcoal text-cream-light rounded-full text-[13px] uppercase tracking-[0.2em] hover:bg-brown-dark transition-all duration-500 hover:shadow-xl hover:-translate-y-0.5"

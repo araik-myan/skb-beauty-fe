@@ -105,7 +105,7 @@ export default function Navbar() {
                 <Instagram size={18} strokeWidth={1.5} />
               </a>
               <a
-                href="https://www.planity.com"
+                href="https://booking.beautynow.ma/69b83820e4d068d34960102e"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] uppercase tracking-[0.2em] font-medium transition-all duration-500 hover:-translate-y-px ${
@@ -205,7 +205,7 @@ export default function Navbar() {
                 className="mt-14 flex flex-col items-center gap-5"
               >
                 <a
-                  href="https://www.planity.com"
+                  href="https://booking.beautynow.ma/69b83820e4d068d34960102e"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-10 py-3.5 bg-charcoal text-cream-light rounded-full text-[12px] uppercase tracking-[0.2em] font-medium"

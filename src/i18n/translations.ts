@@ -142,11 +142,13 @@ export const translations = {
     overlayDesc2: { fr: "pendant votre soin.", en: "during your treatment." },
     drinksLabel: { fr: "Nos boissons", en: "Our beverages" },
     drinks: [
-      { name: { fr: "Thé à la menthe fraîche", en: "Fresh mint tea" }, detail: { fr: "Tradition marocaine", en: "Moroccan tradition" } },
-      { name: { fr: "Café artisanal", en: "Artisan coffee" }, detail: { fr: "Arabica sélectionné", en: "Selected Arabica" } },
-      { name: { fr: "Infusions aux plantes", en: "Herbal infusions" }, detail: { fr: "Camomille, verveine", en: "Chamomile, verbena" } },
-      { name: { fr: "Jus de fruits naturels", en: "Natural fruit juices" }, detail: { fr: "Pressés du jour", en: "Freshly squeezed" } },
-      { name: { fr: "Eau aromatisée", en: "Flavoured water" }, detail: { fr: "Concombre, citron, menthe", en: "Cucumber, lemon, mint" } },
+      { name: { fr: "Jus de fraise", en: "Strawberry juice" }, detail: { fr: "Fruité & rafraîchissant", en: "Fruity & refreshing" } },
+      { name: { fr: "Jus de mangue", en: "Mango juice" }, detail: { fr: "Exotique & onctueux", en: "Exotic & smooth" } },
+      { name: { fr: "Frappuccino Café Caramel", en: "Caramel Coffee Frappuccino" }, detail: { fr: "Glacé & gourmand", en: "Iced & indulgent" } },
+      { name: { fr: "Moka Blanc", en: "White Mocha" }, detail: { fr: "Doux & crémeux", en: "Smooth & creamy" } },
+      { name: { fr: "Matcha", en: "Matcha" }, detail: { fr: "Thé vert japonais", en: "Japanese green tea" } },
+      { name: { fr: "Ubecious", en: "Ubecious" }, detail: { fr: "Ube & saveur unique", en: "Ube & unique flavour" } },
+      { name: { fr: "Caramel Macchiato", en: "Caramel Macchiato" }, detail: { fr: "Espresso & caramel", en: "Espresso & caramel" } },
     ],
     comfortTitle: { fr: "Un moment pour vous", en: "A moment for you" },
     comfortDesc: {

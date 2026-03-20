@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations } from "@/i18n/translations";
 
@@ -139,7 +140,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-5"
         >
           <a
-            href="https://www.planity.com"
+            href="https://booking.beautynow.ma/69b83820e4d068d34960102e"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative px-10 py-4 bg-gold-muted text-charcoal rounded-full text-[13px] uppercase tracking-[0.2em] font-medium transition-all duration-500 hover:bg-gold-light hover:shadow-xl hover:shadow-gold-muted/20 hover:-translate-y-0.5"
