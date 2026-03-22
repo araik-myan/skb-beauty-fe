@@ -15,7 +15,7 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="contact" className="py-28 lg:py-36 bg-charcoal relative overflow-hidden grain-overlay">
+    <section id="contact" className="py-16 md:py-28 lg:py-36 bg-charcoal relative overflow-hidden grain-overlay">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-muted/20 to-transparent" />
       <div
         className="absolute inset-0"
@@ -27,13 +27,13 @@ export default function Contact() {
         }}
       />
 
-      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+      <div ref={ref} className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease }}
-          className="max-w-2xl mb-20"
+          className="max-w-2xl mb-12 md:mb-20"
         >
           <div className="flex items-center gap-4 mb-8">
             <div className="h-px w-12 bg-gold-muted/40" />
@@ -41,7 +41,7 @@ export default function Contact() {
               {t.label[lang]}
             </span>
           </div>
-          <h2 className="font-serif text-4xl lg:text-5xl xl:text-6xl text-cream-light leading-[1.1] mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-cream-light leading-[1.1] mb-4 md:mb-6">
             {t.heading1[lang]}
             <span className="text-gold-muted italic font-light"> {t.heading2[lang]}</span>
           </h2>

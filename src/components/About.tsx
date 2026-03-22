@@ -22,13 +22,13 @@ export default function About() {
   ];
 
   return (
-    <section id="apropos" className="py-28 lg:py-36 bg-white relative overflow-hidden">
+    <section id="apropos" className="py-16 md:py-28 lg:py-36 bg-white relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-0 left-0 right-0 divider-line" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-nude-light/20 to-transparent rounded-bl-full" />
 
-      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div ref={ref} className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 relative">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-20 items-center">
           {/* Left: Visual block — 5 columns */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -110,7 +110,7 @@ export default function About() {
               </span>
             </div>
 
-            <h2 className="font-serif text-4xl lg:text-5xl xl:text-6xl text-charcoal leading-[1.1] mb-8">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-charcoal leading-[1.1] mb-6 md:mb-8">
               {t.heading1[lang]}
               <span className="block text-camel-dark italic font-light mt-1">
                 {t.heading2[lang]}

@@ -89,7 +89,7 @@ export default function Hero() {
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-6xl md:text-8xl lg:text-9xl text-white font-bold leading-[1.05] tracking-tight"
+            className="font-serif text-5xl md:text-8xl lg:text-9xl text-white font-bold leading-[1.05] tracking-tight"
           >
             SKB Beauty
           </motion.h1>
@@ -99,7 +99,7 @@ export default function Hero() {
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="block font-serif text-4xl md:text-5xl lg:text-6xl text-gold-muted font-light italic"
+            className="block font-serif text-3xl md:text-5xl lg:text-6xl text-gold-muted font-light italic"
           >
             Marrakech
           </motion.span>
@@ -137,19 +137,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.4, ease }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 px-2 sm:px-0"
         >
           <a
             href="https://booking.beautynow.ma/69b83820e4d068d34960102e"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative px-10 py-4 bg-gold-muted text-charcoal rounded-full text-[13px] uppercase tracking-[0.2em] font-medium transition-all duration-500 hover:bg-gold-light hover:shadow-xl hover:shadow-gold-muted/20 hover:-translate-y-0.5"
+            className="group relative px-8 md:px-10 py-3.5 md:py-4 bg-gold-muted text-charcoal rounded-full text-[12px] md:text-[13px] uppercase tracking-[0.2em] font-medium transition-all duration-500 hover:bg-gold-light hover:shadow-xl hover:shadow-gold-muted/20 hover:-translate-y-0.5 w-full sm:w-auto text-center"
           >
             <span className="relative z-10">{t.bookOnline[lang]}</span>
           </a>
           <a
             href="#soins"
-            className="group flex items-center gap-3 px-10 py-4 border border-white/20 text-white/80 rounded-full text-[13px] uppercase tracking-[0.2em] transition-all duration-500 hover:border-white/40 hover:text-white hover:bg-white/5"
+            className="group flex items-center justify-center gap-3 px-8 md:px-10 py-3.5 md:py-4 border border-white/20 text-white/80 rounded-full text-[12px] md:text-[13px] uppercase tracking-[0.2em] transition-all duration-500 hover:border-white/40 hover:text-white hover:bg-white/5 w-full sm:w-auto"
           >
             {t.discoverServices[lang]}
           </a>
