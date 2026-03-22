@@ -67,9 +67,8 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* Mobile: scrollable cards / Desktop: bento grid */}
-        {/* Mobile layout */}
-        <div className="flex md:hidden flex-col gap-3">
+        {/* Mobile + Tablet layout (visible descriptions, no hover needed) */}
+        <div className="flex lg:hidden flex-col gap-3">
           {servicesMeta.map((service, index) => {
             const item = t.items[index];
             return (
@@ -151,8 +150,8 @@ export default function Services() {
           })}
         </div>
 
-        {/* Desktop: bento grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-5">
+        {/* Desktop: bento grid (hover interactions) */}
+        <div className="hidden lg:grid lg:grid-cols-12 gap-5">
           {servicesMeta.map((service, index) => {
             const item = t.items[index];
             const colSpan =
