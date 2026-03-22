@@ -74,11 +74,11 @@ export default function Footer() {
                 +212 6 34 19 49 96
               </a>
               <a
-                href="mailto:contact@skbbeauty.ma"
+                href="mailto:skb.beauty212@gmail.com"
                 className="flex items-center gap-3 text-sand/40 hover:text-gold-muted transition-colors duration-300 text-sm"
               >
                 <Mail size={14} className="text-gold-muted/30" strokeWidth={1.5} />
-                contact@skbbeauty.ma
+                skb.beauty212@gmail.com
               </a>
               <div className="flex items-start gap-3 text-sand/40 text-sm">
                 <MapPin

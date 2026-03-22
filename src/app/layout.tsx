@@ -120,7 +120,7 @@ const jsonLd = {
     "Institut de beauté premium au cœur de Guéliz, Marrakech. Extension de cils volume russe, épilation cire orientale, head spa, massage relaxant, manucure gel, pédicure, brow lift et coiffure.",
   url: "https://skbbeauty.ma",
   telephone: "+212634194996",
-  email: "contact@skbbeauty.ma",
+  email: "skb.beauty212@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "2 Rue Imam Malek",

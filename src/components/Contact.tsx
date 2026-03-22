@@ -80,7 +80,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="mailto:contact@skbbeauty.ma"
+              href="mailto:skb.beauty212@gmail.com"
               className="group flex items-start gap-5 p-5 rounded-2xl border border-white/[0.06] hover:border-gold-muted/20 transition-all duration-500 hover:bg-white/[0.02]"
             >
               <div className="w-11 h-11 rounded-xl bg-gold-muted/8 flex items-center justify-center shrink-0 group-hover:bg-gold-muted/15 transition-colors duration-500">
@@ -91,7 +91,7 @@ export default function Contact() {
                   {t.email[lang]}
                 </h4>
                 <p className="text-sand/70 text-sm group-hover:text-gold-light transition-colors duration-300">
-                  contact@skbbeauty.ma
+                  skb.beauty212@gmail.com
                 </p>
                 <span className="inline-flex items-center gap-1 text-[10px] text-gold-muted/40 mt-2 group-hover:text-gold-muted/70 transition-colors uppercase tracking-wider">
                   {t.sendEmail[lang]}
